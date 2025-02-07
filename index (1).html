@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Tapwin</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset de base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Variables de couleur (plus facile à modifier) */
+        :root {
+            --primary-color: #4CAF50; /* Vert */
+            --secondary-color: #2196F3; /* Bleu */
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --light-bg: #fff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 0.5em;
+            font-size: 2.5em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Main */
+        main {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        section {
+            background-color: var(--light-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        ol, ul {
+            padding-left: 2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Promo Card */
+        .promo-card {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .promo-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        .share-methods {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1em;
+        }
+
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: var(--light-bg);
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+
+        .share-button:hover {
+            opacity: 0.8;
+        }
+
+        .telegram { background-color: #2AABEE; }
+        .facebook { background-color: #3B5998; }
+        .whatsapp { background-color: #25D366; }
+
+        /* FAQ */
+        details {
+            margin-bottom: 1em;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        details:hover {
+            border-color: var(--secondary-color);
+        }
+
+        summary {
+            padding: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            background-color: #f2f2f2;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        details p {
+            padding: 10px;
+        }
+
+        /* Icônes */
+        .icon {
+            width: 1.2em;
+            height: 1.2em;
+            margin-right: 0.3em;
+            vertical-align: -0.2em;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--light-bg);
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .share-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-button {
+                margin: 5px 0;
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Tapwin - Documentation</h1>
+            <p>Tout ce que vous devez savoir pour gagner avec Tapwin.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Introduction</a></li>
+                <li><a href="#comment-jouer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5H7z"/></svg> Comment Jouer</a></li>
+                <li><a href="#publicite"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7l-1.41-1.41L15 10.17V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3.17l4.59 4.59L21 17v-10z"/></svg> Publicité & Gains</a></li>
+                <li><a href="#conseils"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-5.33 0-8 4.67-8 9.33 0 2.67 1.33 5.33 4 7.33.67.33 1.33.67 2 1h4c.67-.33 1.33-.67 2-1 2.67-2 4-4.67 4-7.33C20 6.67 17.33 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg> Conseils</a></li>
+                <li><a href="#faq"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Tapwin, c'est votre jeu de tapping directement accessible via Telegram ! Accumulez des pièces et convertissez-les en argent réel avec nos options de paiement diversifiées.</p>
+            </section>
+
+            <section id="comment-jouer">
+                <h2>Comment Jouer</h2>
+                <ol>
+                    <li>Lancez Tapwin depuis votre compte Telegram.</li>
+                    <li>Tapez sur l'écran pour gagner des pièces à chaque interaction.</li>
+                    <li>Explorez la section "Publicité & Gains" pour des stratégies de croissance de vos revenus.</li>
+                </ol>
+            </section>
+
+            <section id="publicite">
+                <h2>📢 Publicité & Gains</h2>
+                <p>Boostez vos gains en partageant votre expérience Tapwin ! Voici quelques pistes pour vous aider :</p>
+
+                <div class="promo-card">
+                    <h3>Le partage, c'est la clé !</h3>
+                    <p>Faites découvrir Tapwin à vos amis Telegram et profitez de bonus exclusifs.</p>
+
+                    <div class="share-methods">
+                        <a href="#" class="share-button telegram">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.73 7.91l-8.23 3.16c-.25.1-.49.2-.73.31-.24-.11-.48-.21-.73-.31l-8.23-3.16c-.83-.32-1.41-.08-1.41.93v8.23c0 1.01.59 1.26 1.41.93l8.23-3.16c.25-.1.49-.2.73-.31.24.11.48.21.73.31l8.23 3.16c.83.32 1.41.08 1.41-.93V8.84c0-1.01-.58-1.25-1.41-.93z"/></svg> Telegram
+                        </a>
+                        <a href="#" class="share-button facebook">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm3 11h-2.5V16h-2V13H8.5v-2.5H10V8h3v2.5H15V13z"/></svg> Facebook
+                        </a>
+                        <a href="#" class="share-button whatsapp">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.58 7.4L8.07 18.9a1.24 1.24 0 0 1-1.74 0l-.5-.5a1.24 1.24 0 0 1 0-1.74l11.51-11.5a2.7 2.7 0 0 1 3.82 3.82z"/></svg> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conseils">
+                <h2>Conseils d'Expert</h2>
+                <ul>
+                    <li>Revenez chaque jour pour collecter vos récompenses et pièces bonus.</li>
+                    <li>Partagez votre lien de parrainage sur les plateformes sociales.</li>
+                    <li>Ne manquez pas nos jeux concours pour remporter des prix attractifs.</li>
+                    <li>Suivez notre blog pour des conseils inédits.</li>
+                </ul>
+            </section>
+
+            <section id="faq">
+                <h2>FAQ</h2>
+                <details>
+                    <summary>Comment retirer mes gains ?</summary>
+                    <p>Nous mettons à votre disposition de nombreuses options : virement bancaire, PayPal, Binance, Mobile Money, Trust Wallet, et bien d'autres !</p>
+                </details>
+                <details>
+                    <summary>Quel est le délai de réception de mon paiement ?</summary>
+                    <p>Les paiements sont traités sous 24 à 72 heures, jours ouvrés.</p>
+                </details>
+                <details>
+                    <summary>Que faire en cas de problème avec l'application ?</summary>
+                    <p>Contactez notre service client via l'application ou par email à support@tapwin.com. Nous sommes là pour vous !</p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Tapwin. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
